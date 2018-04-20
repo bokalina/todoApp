@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Template =() => (
-    <div>
-        
-    <h1>Cao, drugari :)</h1>
-    <p>Ovo je samo proba</p>
-    </div>
-);
+import App from './App';
 
 ReactDOM.render(
-	<Template />,
-    document.getElementById('root')
-);
+	<App/>,document.getElementById('root')
+	);
+
