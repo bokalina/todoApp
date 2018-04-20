@@ -1,6 +1,6 @@
 import React from 'react';  
 import './style.css';
-import Tasks from '../../containers/hometask';
+import Hometask from '../../containers/hometask';
 
  
 class TaskApp extends React.Component { 
@@ -39,8 +39,8 @@ class TaskApp extends React.Component {
   render(){ 
     return (
     	<div>
-    		<h1>Tasks List</h1>
-    		<Tasks tasks={this.state.tasks}/>
+			<h1>Tasks List</h1>
+	    	<Hometask tasks={this.state.tasks}/>
     	</div>
     	); 
   } 

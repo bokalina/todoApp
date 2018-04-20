@@ -10,15 +10,15 @@ class Hometask extends React.Component {
   render(){ 
     return (
     		<div>
-    			{
-    				this.props.tasks.map(
-    					task => <Task
-    								key={task.id}
-    								id={task.id}
-    								description={task.title}
-    							/>
-    					)
-    			}
+		    			{
+		    				this.props.tasks.map(
+		    					task => <Task
+		    								key={task.id}
+		    								id={task.id}
+		    								description={task.title}
+		    							/>
+		    					)
+		    			}
     		</div>
     	); 
   } 
