@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import App from './App';
+import TaskApp from './components/taskapp';
+
 
 
 ReactDOM.render(
-	<h1>Cao, drugari :)</h1>,document.getElementById('root')
+	<TaskApp />,document.getElementById('root')
 	);
