@@ -1,12 +1,14 @@
 import React from 'react';  
 import './style.css';
 import Hometask from '../../containers/hometask';
+import AddTask from '../../components/add_task';
 
  
 class TaskApp extends React.Component { 
   constructor(props){ 
     super(props);
     this.state={
+    	// tasks:[]
     	tasks:[
     		{
 			    "userId": 1,
@@ -33,13 +35,36 @@ class TaskApp extends React.Component {
 			    "completed": true
 			},
     	]
-    } 
+    }
+    this.addTask = this.addTask.bind(this)
   } 
+
+  addTask(title,event){
+  	const newTask = { id: (this.state.tasks.length + 1), title: title}
+  	this.setState({
+  		tasks:[...this.state.tasks, newTask]
+  	})
+  }
+
+  
+  // componentDidMount() {
+  // 	fetch('https://jsonplaceholder.typicode.com/todos')
+  // 	.then(function(response){
+  // 		console.log('componentDidMount');
+  // 		console.log(response.json());
+  // 		return response;
+  // 	})
+  	
+  	
+  // 	.catch(error => console.log('parsing failed', error))
+
+  // }
  
   render(){ 
     return (
     	<div>
 			<h1>Tasks List</h1>
+			<AddTask onSubmit={this.addTask}/>
 	    	<Hometask tasks={this.state.tasks}/>
     	</div>
     	); 
