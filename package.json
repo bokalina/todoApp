@@ -19,10 +19,11 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --module-bind js=babel-loader --module-bind css=style-loader!css-loader --content-base dist"
+    "start": "webpack-dev-server --mode development --module-bind js=babel-loader --module-bind css=style-loader!css-loader  --history-api-fallback --content-base dist"
   },
   "dependencies": {
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2"
   }
 }
