@@ -7,7 +7,11 @@ class Task extends React.Component {
   } 
  
   render(){ 
-    return <p>Task</p>; 
+    return (
+    	<div>
+    		<p>{this.props.id}{this.props.description}</p>
+    	</div>
+    	) 
   } 
 } 
  
