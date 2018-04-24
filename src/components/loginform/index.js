@@ -10,9 +10,14 @@ class LoginForm extends React.Component {
     }
 }
 
-logIn(){
+logIn(e) {
+ 
+	event.preventDefault();
 
-	cosole.log("this.state", this.state);
+	console.log("this.state", this.state);
+	const{email,password}=this.state;
+
+	
 
   } 
  
@@ -24,16 +29,16 @@ logIn(){
     	
 
     	<input 
-    	type= "email"
+    	type= "email" required=""
     	name="email"
     	placeholder ="Email"
-    	onChange={e=>this.setState({email : e.targte.value})}/>
+    	onChange={e=>this.setState({email : e.target.value})}/>
 
        <input 
     	name= "password"
     	placeholder ="Password"
-    	type="password"
-    	onChange={e=>this.setState({password : e.targte.value})}/>
+    	type="password" required=""
+    	onChange={e=>this.setState({password : e.target.value})}/>
 
         <button 
         type="submit"
