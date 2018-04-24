@@ -10,35 +10,36 @@ class Home extends React.Component {
   constructor(props){ 
     super(props)
     this.state={
-      // tasks:[]
-      tasks:[
-        {
-          "userId": 1,
-          "id": 1,
-          "title": "delectus aut autem",
-          "completed": false
-      },
-      {
-          "userId": 1,
-          "id": 2,
-          "title": "quis ut nam facilis et officia qui",
-          "completed": false
-      },
-      {
-          "userId": 1,
-          "id": 3,
-          "title": "fugiat veniam minus",
-          "completed": false
-      },
-      {
-          "userId": 1,
-          "id": 4,
-          "title": "et porro tempora",
-          "completed": true
-      },
-      ]
+      tasks:[]
+      // tasks:[
+      //   {
+      //     "userId": 1,
+      //     "id": 1,
+      //     "title": "delectus aut autem",
+      //     "completed": false
+      // },
+      // {
+      //     "userId": 1,
+      //     "id": 2,
+      //     "title": "quis ut nam facilis et officia qui",
+      //     "completed": false
+      // },
+      // {
+      //     "userId": 1,
+      //     "id": 3,
+      //     "title": "fugiat veniam minus",
+      //     "completed": false
+      // },
+      // {
+      //     "userId": 1,
+      //     "id": 4,
+      //     "title": "et porro tempora",
+      //     "completed": true
+      // },
+      // ]
     }
-    this.addTask = this.addTask.bind(this) 
+    this.addTask = this.addTask.bind(this)
+    this.getTask = this.getTask.bind(this) 
   }
 
   addTask(title,event){
@@ -46,6 +47,18 @@ class Home extends React.Component {
     this.setState({
       tasks:[...this.state.tasks, newTask]
     })
+  }
+
+  getTask(){
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((response) => response.json())
+    .then((data) => this.setState({tasks: data}))
+    .catch((error) => alert('Something went wrong'))
+  }
+
+  componentDidMount(){
+    console.log('componentDidMount')
+    this.getTask();
   }
 
  
