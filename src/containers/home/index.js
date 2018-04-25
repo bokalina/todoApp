@@ -62,14 +62,14 @@ class Home extends React.Component {
   }
 
  
-  render(){ 
-    return (
+  render(){
+    return(
       <div>
         <h1>Tasks List</h1>
         <TaskAdd onSubmit={this.addTask}/>
         <Tasks tasks={this.state.tasks}/>
       </div>
-      ); 
+    );
   }
 } 
  

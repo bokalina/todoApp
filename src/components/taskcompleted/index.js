@@ -7,7 +7,7 @@ class TaskCompleted extends React.Component {
   } 
  
   render(){ 
-    return <p>TaskCompleted</p>; 
+    return <input id="checkBox" type="checkbox">; 
   } 
 } 
  

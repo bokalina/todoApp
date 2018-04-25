@@ -1,1 +1,6 @@
- 
+table,
+th,
+td {
+  border: thin solid black;
+  border-collapse: collapse;
+}
