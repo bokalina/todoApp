@@ -1,6 +1,21 @@
+table{
+	padding: 5px;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
 table,
 th,
 td {
   border: thin solid black;
   border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
 }
