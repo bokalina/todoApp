@@ -18,6 +18,9 @@ class Tasks extends React.Component {
                       <th>Done</th>
                       <th>ID</th>
                       <th>Description</th>
+                      <th>Assignee</th>
+                      <th></th>
+                      <th></th>
                     </tr>
                 </thead>
                 <tbody>
