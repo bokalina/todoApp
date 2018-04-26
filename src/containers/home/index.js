@@ -5,6 +5,7 @@ import Tasks from '../../components/tasks';
 import TaskAdd from '../../components/taskadd';
 import UserDetail from '../../components/userdetail';
 import TaskDelete from '../../components/taskdelete';
+import  TaskEdit from '../../components/taskedit';
  
 class Home extends React.Component { 
   constructor(props){ 
@@ -12,12 +13,19 @@ class Home extends React.Component {
     this.state={
 
       tasks:[]
+      
     }
 
     this.addTask=this.addTask.bind(this)
     this.getTask=this.getTask.bind(this)
     this.delete=this.delete.bind(this)
+    this.EditTask=this.EditTask.bind(this)
   } 
+
+  EditTask(task){
+
+  this.setState({task});
+  }
  
  delete(id){
 
@@ -63,7 +71,9 @@ fetch('https://jsonplaceholder.typicode.com/todos')
     return (<div>
             <h1>Tasks List</h1>
             <TaskAdd onSubmit={this.addTask}/>
-            <Tasks tasks={this.state.tasks}/>
+            <TaskEdit EditTask={this.EditTask}/>
+            <Tasks tasks={this.state.tasks} EditTask={this.EditTask.bind(this)}/>
+            
             <TaskDelete delete={this.delete} tasks={this.state.tasks}/>
            </div>
 
