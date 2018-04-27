@@ -1,72 +1,81 @@
 import React from 'react';  
-import './style.css'  
+import './style.css';
+import Modal from "react-modal";
+
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
  
 class TaskEdit extends React.Component { 
   constructor(props){ 
     super(props)
 
-    this.state={
-
-    	tasks:[]
-    	// editing: null
-    } 
-  } 
-
-  // toggleEditing(id){
-
-  // 	this.setState({editing : task.id });
-  // }
-
-EditTask(task){
-
-	if (this.state.tasks===task.id){
-
-		return <li key= {item.id}>
-
-		<GridRow>
-		<GridColumn>
-		<input 
-		onKeyDown={this.handleEdit}
-		type="text"
-		ref={task.id}
-		name="description"
-		defaultValue={ task.id }/>
-		</GridColumn>
-
-		<GridColumn>
-		<input 
-		onKeyDown={this.handleEdit}
-		type="text"
-		ref={task.id}
-		name="description"
-		defaultValue={ task.title }/>
-		</GridColumn>
-
-		 </GridRow> </li>
+     
+    this.state = {
+        tasks:[],
+      modalIsOpen: false
+    };
+ 
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+ 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+ 
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
 
-	}else {
 
-
-		return <li onClick={this.EditTask.bind(task.id)}
-		key={task.id}>
-		{task.id}  {task.text} </li>
-	}
-}
+ 
+ 
 
 
 
 
   render(){ 
 
-    return ( <ul>
+    return ( <div>
 
-    {this.props.tasks.map((task=>{
+    <button onClick={this.openModal}>Open Modal</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+ 
+          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>EDIT</div>
+          <form>
+            <input type="text" value={this.props.description}/>
+            <input />
+            <button>save</button>
 
-    	return this.EditTask(task);
-    }) 
 
-    </ul>);
+          </form>
+        </Modal>
+
+        </div> );
   } 
 } 
  

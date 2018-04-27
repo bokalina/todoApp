@@ -1,5 +1,6 @@
 import React from 'react';  
 import './style.css'  
+import TaskEdit from "../taskedit";
  
 class Task extends React.Component { 
   constructor(props){ 
@@ -7,7 +8,9 @@ class Task extends React.Component {
   } 
  
   render(){ 
-    return <p>{this.props.id}{this.props.description}</p>; 
+    return <div> <p>{this.props.id}{this.props.description}</p>
+ <TaskEdit description={this.props.description} />
+    </div>; 
   } 
 } 
  
