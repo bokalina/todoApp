@@ -18,7 +18,10 @@ class Task extends React.Component {
               <td>{this.props.id}</td>
               <td>{this.props.description}</td>
               <td>{this.props.assignee}</td>
-              <td><TaskEdit/></td>
+              <td><TaskEdit id={this.props.id}
+                            description={this.props.description}
+                            assignee={this.props.assignee}/>
+              </td>
               <td><TaskDelete/></td>
             </tr>
         return TableRow;

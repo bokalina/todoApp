@@ -60,18 +60,16 @@ class TaskEdit extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Edit Task"
         >
  
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+          <h2 ref={subtitle => this.subtitle = subtitle}>Edit Task:</h2>
           <button onClick={this.closeModal}>close</button>
-          <div>EDIT</div>
+          
           <form>
-            <input type="text" value={this.props.description}/>
-            <input />
-            <button>save</button>
-
-
+            <input type="text" defaultValue={this.props.description}/>
+            <input type="text" defaultValue={this.props.assignee} />
+            <input type="submit" value="Save"/>
           </form>
         </Modal>
 
