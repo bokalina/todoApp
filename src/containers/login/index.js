@@ -9,7 +9,9 @@ class Login extends React.Component {
   } 
  
   render(){ 
-    return <p>Login</p>; 
+    return <div>
+        <LoginForm/>
+        </div>; 
   } 
 } 
  

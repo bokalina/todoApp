@@ -10,15 +10,16 @@ class LoginForm extends React.Component {
         password: "",
         isValid: false,
     }
+    this.logIn = this.logIn.bind(this);
 }
 
-logIn(e) {
+logIn(event) {
  
     event.preventDefault();
-    const handleLogin=this.props.handleLogin; 
-    console.log("this.state", this.state);
-    const{email,password}=this.state;
-    
+    console.log(this.state.email);
+    const {email,password}=this.state;
+    console.log(email);
+    console.log(password);
 
 
     
@@ -26,22 +27,15 @@ logIn(e) {
     if (!(email===""&& password==="")){
         this.setState({isValid: true})
 
+    }
 
-
-        return;
-
-    handleLogin();
-
-  } }
+}
  
   render() { 
 
-    
-    const {isValid}=this.state;
-
     if(this.state.isValid){
 
-        return <Redirect to={"/home"}/>;
+        return <Redirect to={"/"}/>;
     }
 
     return ( 
@@ -49,23 +43,25 @@ logIn(e) {
 
        <h2>LOG IN </h2>
         
-
+       <form onSubmit={this.logIn}>
         <input 
-        type= "email" required=""
+        type= "email" required
         name="email"
         placeholder ="Email"
-        onChange={e=>this.setState({email : event.target.value})}/>
+        onChange={e=>this.setState({email : e.target.value})}/>
 
        <input 
         name= "password"
         placeholder ="Password"
-        type="password" required=""
-        onChange={e=>this.setState({password : event.target.value})}/>
+        type="password" required
+        onChange={e=>this.setState({password : e.target.value})}/>
 
         <button 
-        type="submit"
-        onClick={()=>this.logIn()}>LOG IN </button>
-
+        type="submit">
+        LOG IN
+        </button>
+        
+        </form>
 
 
 
