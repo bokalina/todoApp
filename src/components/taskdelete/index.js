@@ -3,11 +3,25 @@ import './style.css'
  
 class TaskDelete extends React.Component { 
   constructor(props){ 
-    super(props) 
+    super(props)
+    this.delete = this.delete.bind(this);
   } 
+
+  delete(props){
+    debugger;
+    this.props.delete(this.props.id);
+
+
+
+  }
  
   render(){ 
-    return <p>TaskDelete</p>; 
+    return ( <div>
+        <button onClick={this.delete}>DELETE</button>
+        </div>
+
+
+        ); 
   } 
 } 
  

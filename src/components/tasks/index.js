@@ -10,6 +10,8 @@ class Tasks extends React.Component {
     this.state={tasks:[]};
 
     this.getAll = this.getAll.bind(this);
+    this.delete=this.delete.bind(this)
+
     }
 
   getAll(){
@@ -18,6 +20,15 @@ class Tasks extends React.Component {
     .then( (data) => {this.setState({tasks: data})} )
     .catch('error in Fetch method');
   }
+
+  delete(id){
+
+
+  this.setState(prevState=>({
+                tasks: prevState.tasks.filter(tasks=>tasks !=id)
+      }))
+  }
+
 
   componentDidMount(){
     this.getAll();
@@ -45,6 +56,7 @@ class Tasks extends React.Component {
                               id={task.id}
                               description={task.description}
                               assignee={task.assignee}
+                              delete = {this.delete}
                             />
 		    					)
 		    			}

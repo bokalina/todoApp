@@ -22,7 +22,9 @@ class Task extends React.Component {
                             description={this.props.description}
                             assignee={this.props.assignee}/>
               </td>
-              <td><TaskDelete/></td>
+              <td><TaskDelete id={this.props.id}
+                              delete={this.props.delete}/>
+              </td>
             </tr>
         return TableRow;
     
