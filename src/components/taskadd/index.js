@@ -17,13 +17,22 @@ class TaskAdd extends React.Component {
 
   onSubmit(event){
   	event.preventDefault();
-  	this.props.onSubmit(this.state.title, event)
+
+    const data = new FormData(event.target);
+    const url = 'https://anticni.pythonanywhere.com/api/tasks';
+
+    fetch(url, {
+              method: 'POST',
+              body: data
+        }).then(console.log('successful addition'))
+
   }
  
   render(){ 
     return (
     	<form onSubmit={this.onSubmit}>
-    		<input type="text" value={this.state.title} onChange={this.onChange}/>
+    		<input type="text" name="description" placeholder="Description"/>
+        <input type="text" name="assignee" placeholder="Assignee"/>
     		<input type = "submit" value="ADD" />
     	</form>
     	) 
