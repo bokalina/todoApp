@@ -14,7 +14,7 @@ class Task extends React.Component {
   render(){ 
         const TableRow =
             <tr>
-              <td><TaskCompleted/></td>
+              <td><TaskCompleted done={this.props.done}/></td>
               <td>{this.props.id}</td>
               <td>{this.props.description}</td>
               <td>{this.props.assignee}</td>

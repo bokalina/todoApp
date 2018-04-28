@@ -7,7 +7,7 @@ class TaskCompleted extends React.Component {
   } 
  
   render(){ 
-    return <input id="checkBox" type="checkbox" />
+    return <input id="checkBox" type="checkbox" defaultValue={this.props.done} />
   } 
 } 
  

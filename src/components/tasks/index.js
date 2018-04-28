@@ -57,6 +57,7 @@ class Tasks extends React.Component {
                               description={task.description}
                               assignee={task.assignee}
                               delete = {this.delete}
+                              done = {task.done}
                             />
 		    					)
 		    			}
