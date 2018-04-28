@@ -17,7 +17,7 @@ class Task extends React.Component {
               <td><TaskCompleted/></td>
               <td>{this.props.id}</td>
               <td>{this.props.description}</td>
-              <td>Not implemented</td>
+              <td>{this.props.assignee}</td>
               <td><TaskEdit/></td>
               <td><TaskDelete/></td>
             </tr>

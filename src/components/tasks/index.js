@@ -1,5 +1,5 @@
 import React from 'react';  
-import './style.css'
+import './style.css';
 
 import Home from '../../containers/home';
 import Task from '../../components/task';
@@ -7,7 +7,21 @@ import Task from '../../components/task';
 class Tasks extends React.Component { 
   constructor(props){ 
     super(props);
+    this.state={tasks:[]};
+
+    this.getAll = this.getAll.bind(this);
     }
+
+  getAll(){
+    fetch('http://anticni.pythonanywhere.com/api/tasks/all')
+    .then( response => response.json() )
+    .then( (data) => {this.setState({tasks: data})} )
+    .catch('error in Fetch method');
+  }
+
+  componentDidMount(){
+    this.getAll();
+  }
 
 
   render(){ 
@@ -25,11 +39,12 @@ class Tasks extends React.Component {
                 </thead>
                 <tbody>
 		    			{
-		    				this.props.tasks.map(
+		    				this.state.tasks.map(
 		    					(task) => <Task 
                               key={task.id}
                               id={task.id}
-                              description={task.title}
+                              description={task.description}
+                              assignee={task.assignee}
                             />
 		    					)
 		    			}
