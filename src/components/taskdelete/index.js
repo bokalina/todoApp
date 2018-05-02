@@ -8,11 +8,8 @@ class TaskDelete extends React.Component {
   } 
 
   delete(props){
-    debugger;
+    
     this.props.delete(this.props.id);
-
-
-
   }
  
   render(){ 
