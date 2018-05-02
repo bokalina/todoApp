@@ -5,6 +5,7 @@ import './index.css';
 
 import Home from '../containers/home';
 import Login from '../containers/login';
+import UserDetail from "../components/userdetail";
 
 
 class App extends React.Component {
@@ -15,8 +16,9 @@ class App extends React.Component {
     render(){
         return (<Router>
                     <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/login" component={Login} />
+                    <Route exact path="/" component={Login} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/users" component={UserDetail} />
                     <Route component={NotFound} />
                     </Switch>
                 </Router>

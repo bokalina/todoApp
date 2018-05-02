@@ -55,7 +55,7 @@ class Tasks extends React.Component {
                               key={task.id}
                               id={task.id}
                               description={task.description}
-                              assignee={task.assignee}
+                              assignee={task.username}
                               delete = {this.delete}
                               done = {task.done}
                             />

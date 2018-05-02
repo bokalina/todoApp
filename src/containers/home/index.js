@@ -51,7 +51,7 @@ class Home extends React.Component {
 
   getTask(){
     fetch('https://jsonplaceholder.typicode.com/todos')
-    .then((response) => response.json())
+    .then((response) => console.log(response.json()))
     .then((data) => this.setState({tasks: data}))
     .catch((error) => alert('Something went wrong'))
   }

@@ -4,6 +4,7 @@ import './style.css'
 import TaskCompleted from '../taskcompleted';
 import TaskEdit from '../taskedit';
 import TaskDelete from '../taskdelete';
+import UserDetail from '../userdetail';
 
  
 class Task extends React.Component { 
@@ -17,10 +18,10 @@ class Task extends React.Component {
               <td><TaskCompleted done={this.props.done}/></td>
               <td>{this.props.id}</td>
               <td>{this.props.description}</td>
-              <td>{this.props.assignee}</td>
+              <td>{this.props.username}</td>
               <td><TaskEdit id={this.props.id}
                             description={this.props.description}
-                            assignee={this.props.assignee}/>
+                            assignee={this.props.username}/>
               </td>
               <td><TaskDelete id={this.props.id}
                               delete={this.props.delete}/>
