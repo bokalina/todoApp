@@ -35,7 +35,7 @@ logIn(event) {
 
     if(this.state.isValid){
 
-        return <Redirect to={"/"}/>;
+        return <Redirect to={"/home"}/>;
     }
 
     return ( 
