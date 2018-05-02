@@ -15,6 +15,8 @@ class TaskDelete extends React.Component {
               method: 'get'
         }).then(console.log('successful deletion'))
 
+    this.props.delete(this.props.id);
+
   }
 
 

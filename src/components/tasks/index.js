@@ -23,9 +23,9 @@ class Tasks extends React.Component {
 
   delete(id){
 
-
+    debugger;
   this.setState(prevState=>({
-                tasks: prevState.tasks.filter(tasks=>tasks !=id)
+                tasks: prevState.tasks.filter(tasks=> tasks.id != id)
       }))
   }
 
