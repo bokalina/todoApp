@@ -7,13 +7,18 @@ class TaskDelete extends React.Component {
     this.delete = this.delete.bind(this);
   } 
 
-  delete(props){
-    debugger;
-    this.props.delete(this.props.id);
+  delete(){
+    console.log(this.props.id);
+    const url = `https://anticni.pythonanywhere.com/api/tasks/delete/${this.props.id}`;
 
-
+    fetch(url, {
+              method: 'get'
+        }).then(console.log('successful deletion'))
 
   }
+
+
+
  
   render(){ 
     return ( <div>
