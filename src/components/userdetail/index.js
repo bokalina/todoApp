@@ -1,41 +1,66 @@
-import React from 'react';  
-import './style.css'  
+import React from 'react'; 
+import './style.css' ;
  
 class UserDetail extends React.Component { 
-  constructor(props){ 
-    super(props)
-    this.state={
-    	users:[]
-    };
-    this.getUsers=this.getUsers.bind(this)
-  }
+ constructor(props){ 
+  super(props);
+  this.getUsers=this.getUsers.bind(this);
+  this.state = {
+    users: [],
+  } } 
+
+
+
 
   getUsers(){
-  	fetch('https://jsonplaceholder.typicode.com/users')
-    .then( (response) => console.log(response.json()) )
-    .then( (data) => {this.setState({users: data})} )
-    .catch('error in Fetch method');
-  }
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => this.setState(() => ({
+   users: json
+  })))
+ }
 
-  componentDidMount(){
-  	console.log('componentdidmount')
-  	this.getUsers();
-  }
 
-  render(){
-  	return(
-  		<table>
-  			<thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>name</th>
-                      <th>username</th>
-                      <th>email</th>
-                    </tr>
-                </thead>
-  		</table>
-  		);
-  }
+ componentDidMount(){
+  console.log('componentdidmount')
+  this.getUsers();
+ }
+
+ render(){
+  return(
+    <table>
+      <thead>
+     <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>username</th>
+      <th>email</th>
+     </tr>
+    </thead>
+    <tbody>
+     {
+      this.state.users.map((user) => (
+       <User
+        key={user.id}
+        id={user.id}
+        name={user.name} 
+        username={user.username} 
+        email={user.email}
+       />
+      ))
+     }
+    </tbody>
+    </table>
+    );
+ }
 }
- 
-export default UserDetail
+const User = (props) => (
+ <tr>
+  <td>{props.id}</td>
+  <td>{props.name}</td>
+  <td>{props.username}</td>
+  <td>{props.email}</td>
+ </tr>
+);
+
+export default UserDetail;
