@@ -58,6 +58,7 @@ class TaskEdit extends React.Component {
         console.log("ok");
     }).catch(function(error) {
         alert("Server Error\nPlease Try Again");
+        return;
     });
 
     const description = event.target.elements.description.value;
