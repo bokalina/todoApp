@@ -1,1 +1,13 @@
- 
+ .editInput{
+    display: grid;
+ }
+
+ .inputs{
+    margin-top: 10px;
+ }
+
+ .closebutton{
+    top: 0;
+    right: 0;
+    position: fixed;
+ }
