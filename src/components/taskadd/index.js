@@ -1,5 +1,7 @@
 import React from 'react';  
-import './style.css'  
+import './style.css';
+
+import AssigneeInput from '../assignee_input';
  
 class TaskAdd extends React.Component { 
   constructor(props){ 
@@ -29,15 +31,12 @@ class TaskAdd extends React.Component {
   }
  
   render(){
-    const assignees = ['Antonette', 'Bret', 'Samantha', 'Karianne', 'Kamren', 'Leopoldo_Corkery', 'Elwyn.Skiles',
-                        'Maxime_Nienow', 'Delphine', 'Moriah.Stanton'];
+    
 
     return (
     	<form onSubmit={this.onSubmit}>
     		<input type="text" name="description" placeholder="Description"/>
-        <select name="assignee">
-        {assignees.map((user, index)=> <option key={index} value={user}>{user}</option>)}
-        </select>
+        <AssigneeInput/>
     		<input type = "submit" value="ADD" />
     	</form>
     	) 
