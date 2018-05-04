@@ -27,6 +27,8 @@ class TaskEdit extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+
+    this.submitModal = this.submitModal.bind(this);
   }
  
   openModal() {
@@ -42,7 +44,23 @@ class TaskEdit extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
+  submitModal(event){
+    const data = new FormData(event.target);
+    const url = `https://anticni.pythonanywhere.com/api/tasks/edit/${this.props.id}`;
+    console.log(data);
+    debugger;
+    // fetch(url, {
+    //           method: 'POST',
+    //           body: data
+    //     }).then(console.log('successful addition'))
 
+    event.preventDefault();
+    const description = event.target.elements.description.value;
+    const assignee = event.target.elements.assignee.value;
+
+    this.props.edit(this.props.id, assignee, description);
+    this.closeModal();
+  }
 
  
  
@@ -60,15 +78,16 @@ class TaskEdit extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
+          ariaHideApp={false}
           contentLabel="Edit Task"
         >
  
           <h2 ref={subtitle => this.subtitle = subtitle}>Edit Task:</h2>
           <button onClick={this.closeModal}>close</button>
           
-          <form>
-            <input type="text" defaultValue={this.props.description}/>
-            <input type="text" defaultValue={this.props.assignee} />
+          <form onSubmit={this.submitModal}>
+            <input type="text" name="description" defaultValue={this.props.description}/>
+            <input type="text" name="assignee" defaultValue={this.props.assignee} />
             <input type="submit" value="Save"/>
           </form>
         </Modal>

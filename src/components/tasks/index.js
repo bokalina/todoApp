@@ -10,8 +10,8 @@ class Tasks extends React.Component {
     this.state={tasks:[]};
 
     this.getAll = this.getAll.bind(this);
-    this.delete=this.delete.bind(this)
-
+    this.delete=this.delete.bind(this);
+    this.edit=this.edit.bind(this);
     }
 
   getAll(){
@@ -27,6 +27,18 @@ class Tasks extends React.Component {
   this.setState(prevState=>({
                 tasks: prevState.tasks.filter(tasks=> tasks.id != id)
       }))
+  }
+
+  edit(id, assignee, desc){
+    
+  const editTask = this.state.tasks.map(task => {
+                    if (task.id === id) {
+                      task = {...task, assignee: assignee, description: desc };
+                    }
+                    return task;
+                    });
+  this.setState({tasks:editTask})
+
   }
 
 
@@ -58,6 +70,7 @@ class Tasks extends React.Component {
                               assignee={task.assignee}
                               delete = {this.delete}
                               done = {task.done}
+                              edit = {this.edit}
                             />
 		    					)
 		    			}
