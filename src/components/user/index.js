@@ -80,6 +80,7 @@ render(){
        isOpen={this.state.modalIsOpen}
        onAfterOpen={this.afterOpenModal}
        onRequestClose={this.closeModal}
+       ariaHideApp={false}
        style={customStyles}
        contentLabel="Edit Task">
    
@@ -87,8 +88,8 @@ render(){
 
        <button onClick={this.closeModal}>close</button>
        
-       <form>{this.state.user.map((user)=> 
-        <ul>
+       <form>{this.state.user.map((user, index)=> 
+        <ul key={index}>
         <li>{user.name}</li>
         <li>{user.username}</li>
         <li>{user.address.street}</li>
