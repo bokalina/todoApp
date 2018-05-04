@@ -83,14 +83,14 @@ class TaskEdit extends React.Component {
         >
  
           <h2 ref={subtitle => this.subtitle = subtitle}>Edit Task:</h2>
-          <button onClick={this.closeModal}>close</button>
+          <button className="closebutton" onClick={this.closeModal}>X</button>
           
-          <form onSubmit={this.submitModal}>
-            <label for="description">Description: </label>
+          <form className="editInput" onSubmit={this.submitModal}>
+            <label htmlFor="description" className="inputs">Description: </label>
             <input type="text" name="description" defaultValue={this.props.description}/>
-            <label for="assignee">Assignee: </label>
+            <label htmlFor="assignee" className="inputs">Assignee: </label>
             <input type="text" name="assignee" defaultValue={this.props.assignee} />
-            <input type="submit" value="Save"/>
+            <input type="submit" className="inputs" value="Save"/>
           </form>
         </Modal>
 
