@@ -12,6 +12,7 @@ class Tasks extends React.Component {
     this.getAll = this.getAll.bind(this);
     this.delete=this.delete.bind(this);
     this.edit=this.edit.bind(this);
+    this.add=this.add.bind(this);
     }
 
   getAll(){
@@ -38,12 +39,25 @@ class Tasks extends React.Component {
                     return task;
                     });
   this.setState({tasks:editTask})
+  }
 
+  add(assignee, desc){
+    const newtask = {
+      "assignee": assignee,
+      "description": desc,
+      "done": null,
+      "id": this.state.tasks[this.state.tasks.length-1].id+1
+      };
+
+    this.setState(prevState => ({
+  tasks: [...prevState.tasks, newtask]
+    }));
   }
 
 
   componentDidMount(){
     this.getAll();
+
   }
 
 
@@ -71,6 +85,7 @@ class Tasks extends React.Component {
                               delete = {this.delete}
                               done = {task.done}
                               edit = {this.edit}
+
                             />
 		    					)
 		    			}
