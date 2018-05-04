@@ -5,63 +5,13 @@ import Home from '../../containers/home';
 import Task from '../../components/task';
 
 class Tasks extends React.Component { 
-  constructor(props){ 
-    super(props);
-    this.state={tasks:[]};
-
-    this.getAll = this.getAll.bind(this);
-    this.delete=this.delete.bind(this);
-    this.edit=this.edit.bind(this);
-    this.add=this.add.bind(this);
-    }
-
-  getAll(){
-    fetch('http://anticni.pythonanywhere.com/api/tasks/all')
-    .then( response => response.json() )
-    .then( (data) => {this.setState({tasks: data})} )
-    .catch('error in Fetch method');
-  }
-
-  delete(id){
-
-    debugger;
-  this.setState(prevState=>({
-                tasks: prevState.tasks.filter(tasks=> tasks.id != id)
-      }))
-  }
-
-  edit(id, assignee, desc){
-    
-  const editTask = this.state.tasks.map(task => {
-                    if (task.id === id) {
-                      task = {...task, assignee: assignee, description: desc };
-                    }
-                    return task;
-                    });
-  this.setState({tasks:editTask})
-  }
-
-  add(assignee, desc){
-    const newtask = {
-      "assignee": assignee,
-      "description": desc,
-      "done": null,
-      "id": this.state.tasks[this.state.tasks.length-1].id+1
-      };
-
-    this.setState(prevState => ({
-  tasks: [...prevState.tasks, newtask]
-    }));
-  }
+ 
+ constructor(props){
+  super(props);
+ }
 
 
-  componentDidMount(){
-    this.getAll();
-
-  }
-
-
-  render(){ 
+ render(){ 
     return (
             <table className="tableTask">
                 <thead>
