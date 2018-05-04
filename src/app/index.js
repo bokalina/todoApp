@@ -5,7 +5,7 @@ import './index.css';
 
 import Home from '../containers/home';
 import Login from '../containers/login';
-
+import UserDetail from '../components/userdetail';
 
 class App extends React.Component {
     constructor(props){
@@ -17,6 +17,7 @@ class App extends React.Component {
                     <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
+                    <Route path="/users" component={UserDetail} />
                     <Route component={NotFound} />
                     </Switch>
                 </Router>
