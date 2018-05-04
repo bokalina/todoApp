@@ -28,11 +28,16 @@ class TaskAdd extends React.Component {
 
   }
  
-  render(){ 
+  render(){
+    const assignees = ['Antonette', 'Bret', 'Samantha', 'Karianne', 'Kamren', 'Leopoldo_Corkery', 'Elwyn.Skiles',
+                        'Maxime_Nienow', 'Delphine', 'Moriah.Stanton'];
+
     return (
     	<form onSubmit={this.onSubmit}>
     		<input type="text" name="description" placeholder="Description"/>
-        <input type="text" name="assignee" placeholder="Assignee"/>
+        <select name="assignee">
+        {assignees.map((user, index)=> <option key={index} value={user}>{user}</option>)}
+        </select>
     		<input type = "submit" value="ADD" />
     	</form>
     	) 
