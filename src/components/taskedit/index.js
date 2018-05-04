@@ -45,16 +45,21 @@ class TaskEdit extends React.Component {
   }
 
   submitModal(event){
+    event.preventDefault();
     const data = new FormData(event.target);
     const url = `https://anticni.pythonanywhere.com/api/tasks/edit/${this.props.id}`;
-    console.log(data);
-    debugger;
-    // fetch(url, {
-    //           method: 'POST',
-    //           body: data
-    //     }).then(console.log('successful addition'))
+    
+    console.log("submitModal@taskedit")
+    
+    fetch(url, {
+              method: 'POST',
+              body: data
+        }).then(function(response) {
+        console.log("ok");
+    }).catch(function(error) {
+        alert("Server Error\nPlease Try Again");
+    });
 
-    event.preventDefault();
     const description = event.target.elements.description.value;
     const assignee = event.target.elements.assignee.value;
 
