@@ -86,7 +86,9 @@ class TaskEdit extends React.Component {
           <button onClick={this.closeModal}>close</button>
           
           <form onSubmit={this.submitModal}>
+            <label for="description">Description: </label>
             <input type="text" name="description" defaultValue={this.props.description}/>
+            <label for="assignee">Assignee: </label>
             <input type="text" name="assignee" defaultValue={this.props.assignee} />
             <input type="submit" value="Save"/>
           </form>
