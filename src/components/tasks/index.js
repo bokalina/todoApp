@@ -26,7 +26,7 @@ class Tasks extends React.Component {
                 </thead>
                 <tbody>
 		    			{
-		    				this.state.tasks.map(
+		    				this.props.tasks.map(
 		    					(task) => <Task 
                               key={task.id}
                               id={task.id}
