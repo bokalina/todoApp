@@ -12,7 +12,7 @@ class AssigneeInput extends React.Component {
 
     render() {
         return (
-            <select name="assignee" defaultValue="">
+            <select name="assignee" defaultValue={this.props.defaultValue}>
                 <option value="" disabled>Choose Assignee</option>
                 {assignees.map((user, index)=> <option key={index} value={user}>{user}</option>)}
             </select> 

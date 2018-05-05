@@ -46,7 +46,7 @@ class TaskAdd extends React.Component {
     return (
     	<form onSubmit={this.onSubmit}>
     		<input type="text" name="description" placeholder="Description"/>
-        <AssigneeInput/>
+        <AssigneeInput defaultValue=""/>
     		<input type = "submit" value="ADD" />
     	</form>
     	) 
