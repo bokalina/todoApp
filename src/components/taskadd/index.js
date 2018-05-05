@@ -26,12 +26,17 @@ class TaskAdd extends React.Component {
     fetch(url, {
               method: 'POST',
               body: data
-        }).then(console.log('successful addition'));
+        }).then(function(response) {
+        console.log("ok - added");
+    }).catch(function(error) {
+        alert("Server Error\nPlease Try Again");
+        return;
+    });
 
     const assignee = event.target.elements.assignee.value;
     const description = event.target.elements.description.value;
 
-    this.add(assignee, description);
+    this.props.add(assignee, description);
 
   }
  
