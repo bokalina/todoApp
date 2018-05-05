@@ -1,7 +1,7 @@
 import React from 'react';  
+import './style.css';
 
 import Modal from "react-modal";
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 
 
 const customStyles = {
@@ -65,12 +65,6 @@ console.log('componentdidmount')
     this.setState({modalIsOpen: false});
   }
 
-
-
-
-
-
-
 render(){
 
   return ( 
@@ -87,10 +81,10 @@ render(){
    
        <h2 ref={subtitle => this.subtitle = subtitle}></h2>
 
-       <button onClick={this.closeModal}>close</button>
+       <button className="closebutton" onClick={this.closeModal}>X</button>
        
        <form>{this.state.user.map((user, index)=> 
-        <ul key={index}>
+        <ul className="a" key={index}>
           <li><b>Username:</b> {user.username}</li>
           <li><b>Full name:</b> {user.name}</li>
           <li><b>Email:</b> {user.email}</li>
@@ -111,11 +105,7 @@ render(){
     </div> 
     );
  }
-
-  } 
-
+} 
 
 
-
- 
 export default User

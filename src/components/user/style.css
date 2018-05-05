@@ -1,0 +1,28 @@
+.closebutton{
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: darkred;
+    color: white;
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+ul.a{
+	list-style-type: square;
+}
+
