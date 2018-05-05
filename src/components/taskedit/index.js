@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import Modal from "react-modal";
 
+import AssigneeInput from '../assignee_input';
 
 const customStyles = {
   content : {
@@ -95,6 +96,7 @@ class TaskEdit extends React.Component {
             <label htmlFor="description" className="inputs">Description: </label>
             <input type="text" name="description" defaultValue={this.props.description}/>
             <label htmlFor="assignee" className="inputs">Assignee: </label>
+            <AssigneeInput/>
             <input type="text" name="assignee" defaultValue={this.props.assignee} />
             <input type="submit" className="inputs" value="Save"/>
           </form>
