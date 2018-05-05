@@ -75,7 +75,7 @@ class Home extends React.Component {
       </div>
         <h1>Tasks List</h1>
         <TaskAdd add={this.add}/>
-        <Tasks tasks={this.state.tasks}/>
+        <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete}/>
       </div>
     );
   }

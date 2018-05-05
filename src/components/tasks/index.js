@@ -32,9 +32,9 @@ class Tasks extends React.Component {
                               id={task.id}
                               description={task.description}
                               assignee={task.assignee}
-                              delete = {this.delete}
+                              delete = {this.props.delete}
                               done = {task.done}
-                              edit = {this.edit}
+                              edit = {this.props.edit}
 
                             />
 		    					)
