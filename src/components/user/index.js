@@ -91,12 +91,21 @@ render(){
        
        <form>{this.state.user.map((user, index)=> 
         <ul key={index}>
-        <li>{user.name}</li>
-        <li>{user.username}</li>
-        <li>{user.address.street}</li>
-        <li>{user.email}</li>
+          <li>Username: {user.username}</li>
+          <li>Full name: {user.name}</li>
+          <li>Email: {user.email}</li>
+          <li>Phone number: {user.phone}</li>
+          <li>Website: {user.website}</li>
+          <li>Address:
+            <ul>
+              <li>street: {user.address.street}</li>
+              <li>suite: {user.address.suite}</li>
+              <li>city: {user.address.city}</li>
+              <li>zipcode: {user.address.zipcode}</li>
+            </ul>
+          </li>
+          <li>Company name: {user.company.name}</li>
         </ul>)}
-
        </form>
       </Modal>
     </div> 
