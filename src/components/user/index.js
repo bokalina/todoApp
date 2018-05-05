@@ -1,6 +1,7 @@
 import React from 'react';  
 
 import Modal from "react-modal";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 
 
 const customStyles = {
@@ -28,7 +29,7 @@ class User extends React.Component {
 
  
 
-      this.getOne=this.getOne.bind(this);
+    this.getOne=this.getOne.bind(this);
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -75,7 +76,7 @@ render(){
   return ( 
 
    <div>
-    <button onClick={this.openModal}>{this.props.name}</button>
+    <a href="#" onClick={this.openModal}>{this.props.name}</a>
       <Modal
        isOpen={this.state.modalIsOpen}
        onAfterOpen={this.afterOpenModal}
