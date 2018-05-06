@@ -1,1 +1,54 @@
- 
+table {
+	height:100%;
+	width: 100%;
+	border: 1px solid darkblue;
+	overflow: hidden;
+	font-family: calibi;
+}
+
+tr,td{
+	font-family: calibri;
+	text-align: left;
+	color: black;
+	border: 1px solid darkblue;
+}
+
+/*#address{
+	text-align: left;
+}*/
+
+thead,th {
+	background-color: #55608f;
+	color:white;
+	border: 1px solid darkblue;
+	text-align: center;
+	font-family: calibri;
+}
+
+td, th {
+  position: relative;
+}
+
+tr:hover {
+	background-color: #DADAFB;
+}
+
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #DADAFB;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
