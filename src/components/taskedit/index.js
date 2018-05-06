@@ -99,7 +99,7 @@ class TaskEdit extends React.Component {
             <label htmlFor="assignee" className="inputs">Assignee: </label>
             <AssigneeInput defaultValue={this.props.done}/>
             <label htmlFor="done" classnema="inputs">Is Task Completed:</label>
-            <select name="done" defaultValue={this.props.defaultValue}>
+            <select name="done" defaultValue={this.props.done}>
               <option value="true">True</option>
               <option value="false">False</option>
             </select>
