@@ -64,8 +64,9 @@ class TaskEdit extends React.Component {
 
     const description = event.target.elements.description.value;
     const assignee = event.target.elements.assignee.value;
+    const done = event.target.elements.done.value;
 
-    this.props.edit(this.props.id, assignee, description);
+    this.props.edit(this.props.id, assignee, description, done);
     this.closeModal();
   }
 

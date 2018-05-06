@@ -34,11 +34,11 @@ class Home extends React.Component {
       }))
   }
 
-  edit(id, assignee, desc){
+  edit(id, assignee, desc, done){
     
   const editTask = this.state.tasks.map(task => {
                     if (task.id === id) {
-                      task = {...task, assignee: assignee, description: desc };
+                      task = {...task, assignee: assignee, description: desc, done: done };
                     }
                     return task;
                     });
