@@ -35,7 +35,7 @@ class Tasks extends React.Component {
                               delete = {this.props.delete}
                               done = {task.done}
                               edit = {this.props.edit}
-
+                              checkbox = {this.props.checkbox}
                             />
 		    					)
 		    			}

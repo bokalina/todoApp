@@ -16,6 +16,7 @@ class Home extends React.Component {
     this.delete=this.delete.bind(this);
     this.edit=this.edit.bind(this);
     this.add=this.add.bind(this);
+    this.checkbox=this.checkbox.bind(this);
     }
 
   getAll(){
@@ -57,6 +58,15 @@ class Home extends React.Component {
     }));
   }
 
+  checkbox(id){
+    const editTask = this.state.tasks.map(task => {
+                    if (task.id === id) {
+                      task = {...task, done: true };
+                    }
+                    return task;
+                    });
+    this.setState({tasks:editTask})
+  }
 
   componentDidMount(){
     this.getAll();
@@ -75,7 +85,7 @@ class Home extends React.Component {
       </div>
         <h1>Tasks List</h1>
         <TaskAdd add={this.add}/>
-        <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete}/>
+        <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete} checkbox={this.checkbox}/>
       </div>
     );
   }

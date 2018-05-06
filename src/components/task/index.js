@@ -15,7 +15,7 @@ class Task extends React.Component {
   render(){ 
         const TableRow =
             <tr>
-              <td><TaskCompleted done={this.props.done}/></td>
+              <td><TaskCompleted done={this.props.done} checkbox={this.props.checkbox}/></td>
               <td>{this.props.id}</td>
               <td>{this.props.description}</td>
               <td><User name={this.props.assignee}/></td>
