@@ -61,7 +61,7 @@ class Home extends React.Component {
   checkbox(id){
     const editTask = this.state.tasks.map(task => {
                     if (task.id === id) {
-                      task = {...task, done: true };
+                      task = {...task, done : "true" };
                     }
                     return task;
                     });

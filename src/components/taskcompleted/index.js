@@ -5,7 +5,7 @@ class TaskCompleted extends React.Component {
   constructor(props){ 
     super(props);
     this.state = {
-        checked : this.props.done
+        checked : this.props.done === 'true'
     }
 
     this.onChange = this.onChange.bind(this); 
@@ -15,7 +15,8 @@ class TaskCompleted extends React.Component {
     console.log("onChange@taskcompleted");
     
     const data = new FormData();
-    data.append('done', String(event.target.checked));
+    data.append('done', 'true');
+
     const url = `https://anticni.pythonanywhere.com/api/tasks/isdone/${this.props.id}`;
 
     fetch(url, {
@@ -28,7 +29,9 @@ class TaskCompleted extends React.Component {
         return;
     });
 
+    this.setState({checked: true});
     this.props.checkbox(this.props.id);
+    
 
 
   }
