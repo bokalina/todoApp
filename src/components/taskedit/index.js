@@ -96,7 +96,12 @@ class TaskEdit extends React.Component {
             <label htmlFor="description" className="inputs">Description: </label>
             <input type="text" name="description" defaultValue={this.props.description}/>
             <label htmlFor="assignee" className="inputs">Assignee: </label>
-            <AssigneeInput defaultValue={this.props.assignee}/>
+            <AssigneeInput defaultValue={this.props.done}/>
+            <label htmlFor="done" classnema="inputs">Is Task Completed:</label>
+            <select name="done" defaultValue={this.props.defaultValue}>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
             <input type="submit" className="inputs" value="Save"/>
           </form>
         </Modal>

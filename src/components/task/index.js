@@ -22,6 +22,7 @@ class Task extends React.Component {
               <td><TaskEdit id={this.props.id}
                             description={this.props.description}
                             assignee={this.props.assignee}
+                            done={this.props.done}
                             edit={this.props.edit}/>
               </td>
               <td><TaskDelete id={this.props.id}
