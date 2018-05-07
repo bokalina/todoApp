@@ -35,18 +35,18 @@ class UserDetail extends React.Component {
   return(
     <table className="tableUser">
       <thead className="header">
-     <tr>
-      <th>ID</th>
-      <th>NAME</th>
-      <th>USERNAME</th>
-      <th>EMAIL</th>
-      <th>ADDRESS</th>
-      <th>PHONE</th>
-      <th>WEBSITE</th>
-      <th>COMPANY NAME</th>
+     <tr className="headerRow">
+      <th className="h1">ID</th>
+      <th className="h1">NAME</th>
+      <th className="h1">USERNAME</th>
+      <th className="h1">EMAIL</th>
+      <th className="h1">ADDRESS</th>
+      <th className="h1">PHONE</th>
+      <th className="h1">WEBSITE</th>
+      <th className="h1">COMPANY NAME</th>
      </tr>
     </thead>
-    <tbody>
+    <tbody className="tableBody">
      {
       this.state.users.map((user) => (
        <User
@@ -71,15 +71,15 @@ class UserDetail extends React.Component {
  }
 }
 const User = (props) => (
- <tr>
-  <td>{props.id}</td>
-  <td>{props.name}</td>
-  <td>{props.username}</td>
-  <td>{props.email}</td>
-  <td>{props.street},{props.suite},{props.city},{props.zipcode}</td>
-  <td>{props.phone}</td>
-  <td>{props.website}</td>
-  <td>{props.company}</td>
+ <tr className="tableRow">
+  <td className="cell">{props.id}</td>
+  <td className="cell">{props.name}</td>
+  <td className="cell">{props.username}</td>
+  <td className="cell">{props.email}</td>
+  <td className="cell">{props.street},{props.suite},{props.city},{props.zipcode}</td>
+  <td className="cell">{props.phone}</td>
+  <td className="cell">{props.website}</td>
+  <td className="cell">{props.company}</td>
  </tr>
 );
 
