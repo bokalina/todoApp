@@ -37,9 +37,13 @@ class UserDetail extends React.Component {
       <thead>
      <tr>
       <th>ID</th>
-      <th>name</th>
-      <th>username</th>
-      <th>email</th>
+      <th>NAME</th>
+      <th>USERNAME</th>
+      <th>EMAIL</th>
+      <th>ADDRESS</th>
+      <th>PHONE</th>
+      <th>WEBSITE</th>
+      <th>COMPANY NAME</th>
      </tr>
     </thead>
     <tbody>
@@ -51,6 +55,13 @@ class UserDetail extends React.Component {
         name={user.name} 
         username={user.username} 
         email={user.email}
+        street={user.address.street}
+        suite={user.address.suite}
+        city={user.address.city}
+        zipcode={user.address.zipcode}
+        phone={user.phone}
+        website={user.website}
+        company={user.company.name}
        />
       ))
      }
@@ -65,6 +76,10 @@ const User = (props) => (
   <td>{props.name}</td>
   <td>{props.username}</td>
   <td>{props.email}</td>
+  <td>{props.street},{props.suite},{props.city},{props.zipcode}</td>
+  <td>{props.phone}</td>
+  <td>{props.website}</td>
+  <td>{props.company}</td>
  </tr>
 );
 
