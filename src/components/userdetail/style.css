@@ -1,1 +1,50 @@
- 
+.tableUser {
+	height:100%;
+	width: 100%;
+	border: 1px solid darkblue;
+	overflow: hidden;
+	font-family: calibri;
+}
+
+.tableBody, .cell{
+	font-family: calibri;
+	text-align: left;
+	color: black;
+	border: 1px solid darkblue;
+}
+
+.header, .h1{
+	background-color: #55608f;
+	color:white;
+	border: 1px solid darkblue;
+	text-align: center;
+	font-family: calibri;
+}
+
+.cell, .h1 {
+  position: relative;
+}
+
+.tableRow:hover {
+	background-color: #DADAFB;
+}
+
+.cell:hover::after,
+.h1:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #DADAFB;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
