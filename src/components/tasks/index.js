@@ -33,7 +33,7 @@ class Tasks extends React.Component {
                               description={task.description}
                               assignee={task.assignee}
                               delete = {this.props.delete}
-                              done = {task.done}
+                              done = {task.done === "true"}
                               edit = {this.props.edit}
                               checkbox = {this.props.checkbox}
                             />

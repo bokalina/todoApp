@@ -5,7 +5,7 @@ class TaskCompleted extends React.Component {
   constructor(props){ 
     super(props);
     this.state = {
-        checked : this.props.done === 'true'
+        checked : this.props.done
     }
 
     this.onChange = this.onChange.bind(this); 
