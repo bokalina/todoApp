@@ -1,19 +1,19 @@
-table {
+.tableUser {
 	height:100%;
 	width: 100%;
 	border: 1px solid darkblue;
 	overflow: hidden;
-	font-family: calibi;
+	font-family: calibri;
 }
 
-tr,td{
+/*tr,td{
 	font-family: calibri;
 	text-align: left;
 	color: black;
 	border: 1px solid darkblue;
-}
+}*/
 
-thead,th {
+.header{
 	background-color: #55608f;
 	color:white;
 	border: 1px solid darkblue;
@@ -21,7 +21,7 @@ thead,th {
 	font-family: calibri;
 }
 
-td, th {
+/*td, th {
   position: relative;
 }
 
@@ -39,7 +39,7 @@ th:hover::after {
   height: 10000px;
   width: 100%;
   z-index: -1;
-}
+}*/
 
 
 

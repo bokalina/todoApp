@@ -33,8 +33,8 @@ class UserDetail extends React.Component {
 
  render(){
   return(
-    <table>
-      <thead>
+    <table className="tableUser">
+      <thead className="header">
      <tr>
       <th>ID</th>
       <th>NAME</th>
