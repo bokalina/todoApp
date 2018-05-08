@@ -17,6 +17,7 @@ class Home extends React.Component {
     this.edit=this.edit.bind(this);
     this.add=this.add.bind(this);
     this.checkbox=this.checkbox.bind(this);
+    this.signout=this.signout.bind(this);
     }
 
   getAll(){
@@ -66,6 +67,11 @@ class Home extends React.Component {
     this.setState({tasks:editTask})
   }
 
+  signout(){
+    sessionStorage.clear();
+    this.setState({isValid:false});
+  }
+
   componentDidMount(){
     this.getAll();
 
@@ -83,8 +89,8 @@ class Home extends React.Component {
       <div className="navbar">
         <ul className="nav-list">
           <li className="nav-item"><Link to="/">Home</Link></li>
-          <li className="nav-item"><Link to="/login">Login</Link></li>
           <li className="nav-item"><Link to="/users">Assignees</Link></li>
+          <li className="nav-item"><a href='#' onClick={this.signout}>Sign-out</a></li>
           <li className="nav-logo">ToDo App</li>
         </ul>
       </div>
