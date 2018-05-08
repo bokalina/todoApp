@@ -21,7 +21,8 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --module-bind js=babel-loader --module-bind css=style-loader!css-loader  --history-api-fallback --content-base dist"
+    "start": "webpack-dev-server --mode development --module-bind js=babel-loader --module-bind css=style-loader!css-loader  --history-api-fallback --content-base dist",
+    "build": "webpack --mode development"
   },
   "dependencies": {
     "react": "^16.3.2",
