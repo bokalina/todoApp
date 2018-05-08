@@ -14,7 +14,7 @@ html, body {
     padding: 0;
 }
 
-.nav-list {
+.nav-list, .login-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -34,7 +34,7 @@ html, body {
     text-decoration: none;
 }
 
-.nav-item a:hover {
+.nav-item a:hover .login-nav:hover {
     background-color: gray;
 }
 

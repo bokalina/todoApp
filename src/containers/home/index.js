@@ -10,7 +10,7 @@ import UserDetail from '../../components/userdetail';
 class Home extends React.Component { 
    constructor(props){ 
     super(props);
-    this.state={tasks:[]};
+    this.state={tasks:[], isValid:sessionStorage.getItem('isValid')};
 
     this.getAll = this.getAll.bind(this);
     this.delete=this.delete.bind(this);
@@ -74,6 +74,10 @@ class Home extends React.Component {
 
  
   render(){
+    if(!this.state.isValid || this.state.isValid == null){
+      return <Redirect to="/login"/>
+    }
+
     return(
       <div>
       <div className="navbar">

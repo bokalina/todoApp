@@ -26,7 +26,7 @@ logIn(event) {
 
     if (!(email===""&& password==="")){
         this.setState({isValid: true})
-
+        sessionStorage.setItem('isValid', true);
     }
 
 }
@@ -39,24 +39,27 @@ logIn(event) {
     }
 
     return ( 
-       <div className="Form">
+       <div className="loginForm">
 
-       <h2>LOG IN </h2>
+       <h2 className="login-nav">ToDo App</h2>
         
-       <form onSubmit={this.logIn}>
-        <input 
+       <form className="login-form" onSubmit={this.logIn}>
+        <input
+        className='login-input' 
         type= "email" required
         name="email"
         placeholder ="Email"
         onChange={e=>this.setState({email : e.target.value})}/>
 
        <input 
+        className ="login-input"
         name= "password"
         placeholder ="Password"
         type="password" required
         onChange={e=>this.setState({password : e.target.value})}/>
 
         <button 
+        className="login-button"
         type="submit">
         LOG IN
         </button>
