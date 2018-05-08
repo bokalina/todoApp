@@ -1,3 +1,25 @@
 form{
 	padding: 10px;
 } 
+
+.AddForm {
+    text-align: center;
+}
+
+.AddForm input, select{
+    margin-left: 10px;
+}
+
+input[type=text]:focus {
+    background-color: #f1f1f1;
+}
+
+input[type=submit]:hover{
+    background-color: #f1f1f1;   
+}
+
+select {
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}

@@ -76,14 +76,20 @@ class Home extends React.Component {
   render(){
     return(
       <div>
-      <div className="header">
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/users">Assignee List</Link>
+      <div className="navbar">
+        <ul className="nav-list">
+          <li className="nav-item"><Link to="/">Home</Link></li>
+          <li className="nav-item"><Link to="/login">Login</Link></li>
+          <li className="nav-item"><Link to="/users">Assignees</Link></li>
+        </ul>
       </div>
         <h1>Tasks List</h1>
         <TaskAdd add={this.add}/>
         <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete} checkbox={this.checkbox}/>
+        <div className="bot">
+        <div> PZORG® </div>
+        <span><div>bokalina pranojka anticni</div></span>
+        </div>
       </div>
     );
   }

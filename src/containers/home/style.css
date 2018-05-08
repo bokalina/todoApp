@@ -2,10 +2,40 @@ h1{
 	color: darkred;
 } 
 
-.header {
+.bot {
     height:50px;
-    background:#F0F0F0;
-    border:1px solid #CCC;
-    width:960px;
-    margin:0px auto;
+    background:#778899;
+    color:white;
+    width:100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+html, body {
+    margin: 0; 
+    padding: 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #778899;
+}
+
+.nav-item {
+    float: left;
+}
+
+.nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    background-color: #111;
 }
