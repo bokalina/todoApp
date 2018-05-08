@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
+import { HashRouter, BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 
 import './index.css';
 
@@ -13,14 +13,14 @@ class App extends React.Component {
     }
 
     render(){
-        return (<Router>
+        return (<HashRouter>
                     <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/users" component={UserDetail} />
                     <Route component={NotFound} />
                     </Switch>
-                </Router>
+                </HashRouter>
                 
             );
     }

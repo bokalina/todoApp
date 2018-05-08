@@ -20,7 +20,7 @@ class Home extends React.Component {
     }
 
   getAll(){
-    fetch('http://anticni.pythonanywhere.com/api/tasks/all')
+    fetch('https://anticni.pythonanywhere.com/api/tasks/all')
     .then( response => response.json() )
     .then( (data) => {this.setState({tasks: data})} )
     .catch('error in Fetch method');
