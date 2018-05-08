@@ -27,8 +27,6 @@ class Home extends React.Component {
   }
 
   delete(id){
-
-    debugger;
   this.setState(prevState=>({
                 tasks: prevState.tasks.filter(tasks=> tasks.id != id)
       }))
