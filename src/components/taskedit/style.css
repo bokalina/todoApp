@@ -4,6 +4,7 @@
 
  .inputs{
     margin-top: 10px;
+    margin-bottom: 8px;
  }
 
  .closebutton{
@@ -11,3 +12,7 @@
     right: 0;
     position: fixed;
  }
+
+.edit-select{
+    margin:0;
+}

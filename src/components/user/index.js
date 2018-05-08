@@ -70,7 +70,7 @@ render(){
   return ( 
 
    <div>
-    <a href="#" onClick={this.openModal}>{this.props.name}</a>
+    <div className="user-btn" onClick={this.openModal}>{this.props.name}</div>
       <Modal
        isOpen={this.state.modalIsOpen}
        onAfterOpen={this.afterOpenModal}

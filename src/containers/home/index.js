@@ -81,9 +81,9 @@ class Home extends React.Component {
           <li className="nav-item"><Link to="/">Home</Link></li>
           <li className="nav-item"><Link to="/login">Login</Link></li>
           <li className="nav-item"><Link to="/users">Assignees</Link></li>
+          <li className="nav-logo">ToDo App</li>
         </ul>
       </div>
-        <h1>Tasks List</h1>
         <TaskAdd add={this.add}/>
         <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete} checkbox={this.checkbox}/>
         <div className="bot">

@@ -38,7 +38,7 @@ class TaskEdit extends React.Component {
  
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+    return;
   }
  
   closeModal() {
@@ -90,16 +90,16 @@ class TaskEdit extends React.Component {
           contentLabel="Edit Task"
         >
  
-          <h2 ref={subtitle => this.subtitle = subtitle}>Edit Task:</h2>
+          <h3>Edit Task:</h3>
           <button className="closebutton" onClick={this.closeModal}>X</button>
           
           <form className="editInput" onSubmit={this.submitModal}>
             <label htmlFor="description" className="inputs">Description: </label>
             <input type="text" name="description" defaultValue={this.props.description}/>
             <label htmlFor="assignee" className="inputs">Assignee: </label>
-            <AssigneeInput defaultValue={this.props.done}/>
+            <AssigneeInput className="edit-select" defaultValue={this.props.done}/>
             <label htmlFor="done" className="inputs">Completed:</label>
-            <select name="done" defaultValue={this.props.done}>
+            <select className="edit-select" name="done" defaultValue={this.props.done}>
               <option value="true">True</option>
               <option value="false">False</option>
             </select>

@@ -2,27 +2,16 @@
     top: 0;
     right: 0;
     position: fixed;
-    background-color: darkred;
+    background-color: lightgray;
     color: white;
 }
 
-a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+.closebutton:hover{
+    background-color: gray;
 }
-a:visited {
-    color: green;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: red;
-    background-color: transparent;
+
+.user-btn{
+    font-weight: bold;
+    cursor: pointer;
     text-decoration: underline;
 }
-
-ul.a{
-	list-style-type: square;
-}
-
