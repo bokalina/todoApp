@@ -92,7 +92,6 @@ class Home extends React.Component {
         <Tasks tasks={this.state.tasks} add={this.add} edit={this.edit} delete={this.delete} checkbox={this.checkbox}/>
         <div className="bot">
         <div> PZORG® </div>
-        <span><div>bokalina pranojka anticni</div></span>
         </div>
       </div>
     );
