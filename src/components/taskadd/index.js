@@ -37,7 +37,7 @@ class TaskAdd extends React.Component {
     const description = event.target.elements.description.value;
 
     this.props.add(assignee, description);
-
+    event.target.reset();
   }
  
   render(){
